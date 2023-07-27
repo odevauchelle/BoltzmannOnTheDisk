@@ -7,15 +7,15 @@ This convenience library approximates numerically the partition function of the 
 Specifically, we define
 
 $$
-Z_a = \iint \exp( a y ) \, \mathrm{d} x \, \mathrm{d} y
+Z_a = \iint \exp( a y )  \mathrm{d} x  \mathrm{d} y
 $$
 
 where the integral is over the unit disk. In radial coordinates,
 
 $$
 Z_a
-= \int_{r=0}^1 \int_{\theta =0}^{2\pi} \exp( a r \sin \theta ) \, r \, \mathrm{d} r \, \mathrm{d} \theta
-= 2\pi \int_0^1 I_0(a r) \, r \, \mathrm{d} r
+= \int_{r=0}^1 \int_{\theta =0}^{2\pi} \exp( a r \sin \theta )  r  \mathrm{d} r  \mathrm{d} \theta
+= 2\pi \int_0^1 I_0(a r)  r  \mathrm{d} r
 $$
 
 after using one of [these](https://en.wikipedia.org/wiki/List_of_integrals_of_exponential_functions#Definite_integrals) relations.
@@ -38,7 +38,7 @@ The average position is
 $$
 \langle y \rangle
 = \dfrac{1}{Z_a} \dfrac{\partial Z_a}{\partial a}
-= -\dfrac{2}{a} + 2\pi \dfrac{I_0(a)}{a\,Z_a}
+= -\dfrac{2}{a} + 2\pi \dfrac{I_0(a)}{aZ_a}
 $$
 
 This is how it looks:
@@ -61,7 +61,7 @@ When $a$ is small, the exponential can be expanded (up to second order):
 
 $$
 Z_a
-\approx \iint ( 1 + a y + \dfrac{(ay)^2}{2} ) \, \mathrm{d} x \, \mathrm{d} y
+\approx \iint \left( 1 + a y + \dfrac{(ay)^2}{2} \right)  \mathrm{d} x  \mathrm{d} y
 = \pi + \dfrac{\pi}{8} a^2
 $$
 
@@ -83,8 +83,8 @@ We then write
 
 $$
 Z_a
-= 2 \int_{-1}^1 \exp( a y ) \sqrt{1-y^2} \, \mathrm{d} y
-\approx \exp( a ) \int_0^{\infty} \exp \left( -\dfrac{\alpha \epsilon^2}{2} \right) \, \epsilon^2  \, \mathrm{d} \epsilon
+= 2 \int_{-1}^1 \exp( a y ) \sqrt{1-y^2}  \mathrm{d} y
+\approx \exp( a ) \int_0^{\infty} \exp \left( -\dfrac{\alpha \epsilon^2}{2} \right)  \epsilon^2   \mathrm{d} \epsilon
 = \sqrt{\dfrac{\pi}{2}} \exp(a) a^{-3/2}
 $$
 
